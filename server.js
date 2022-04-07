@@ -1,5 +1,6 @@
 var proxy = require('http-proxy');
 var express = require('express');
+var router = express.Router();
 var https = require('https');
 var url = require('url');
 var path = require('path');
@@ -132,3 +133,5 @@ app.use(function (err, req, res, next) {
 app.listen(port, function () {
   console.log('Listening on port ' + port);
 });
+
+setInterval(()=>{ router.get('https://aznguymp4-rblxproxy.herokuapp.com/') },1500000)
